@@ -13,7 +13,8 @@
   "exclude": [
     "client",
     "dist",
-    "node_modules"
+    "node_modules",
+    "scratch",
   ]
   // "compilerOptions": {
   //   /* Visit https://aka.ms/tsconfig to read more about this file */
