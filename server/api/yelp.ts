@@ -1,8 +1,8 @@
 import url from "url";
 
 export enum SortBy {
-  rating,
-  distance,
+  rating = "rating",
+  distance = "distance",
 }
 
 export type GetBobaFilters = {

@@ -8,8 +8,8 @@ exports.getBobaShops = getBobaShops;
 const url_1 = __importDefault(require("url"));
 var SortBy;
 (function (SortBy) {
-    SortBy[SortBy["rating"] = 0] = "rating";
-    SortBy[SortBy["distance"] = 1] = "distance";
+    SortBy["rating"] = "rating";
+    SortBy["distance"] = "distance";
 })(SortBy || (exports.SortBy = SortBy = {}));
 function getBobaShops(filters) {
     const options = {
