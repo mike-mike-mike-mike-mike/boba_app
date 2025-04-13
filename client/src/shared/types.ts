@@ -16,5 +16,15 @@ export enum SortBy {
 }
 
 export type ShopType = {
+  alias: string;
+  distance: string;
+  id: string;
+  image_url: string;
   name: string;
+  rating: string;
+  url: string;
+};
+
+export type ShopsResponseType = {
+  businesses: ShopType[];
 };
