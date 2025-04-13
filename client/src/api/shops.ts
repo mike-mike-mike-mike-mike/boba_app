@@ -1,6 +1,10 @@
 import { FiltersType } from "../components/filters";
+import { ShopsResponseType } from "../shared/types";
 
-export async function getShops(filters: FiltersType, page: number = 0) {
+export async function getShops(
+  filters: FiltersType,
+  page: number = 0
+): Promise<ShopsResponseType> {
   const query = new URLSearchParams({
     ...filters,
     page: String(page),

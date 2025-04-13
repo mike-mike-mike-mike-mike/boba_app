@@ -5,6 +5,7 @@ import { Filters, FiltersType } from "./components/filters";
 import { ShopType, SortBy } from "./shared/types";
 import { ShopList } from "./components/ShopList";
 import { getShops } from "./api/shops";
+import { LoadMore } from "./components/LoadMore";
 
 const exampleShop: ShopType = {
   alias: "tasty-boba",
@@ -24,9 +25,13 @@ function App() {
   });
   const [shops, setShops] = useState<ShopType[]>([exampleShop]);
   const [loading, setLoading] = useState<boolean>(false);
+  const [page, setPage] = useState<number>(0);
 
   useEffect(() => {
     const fetchShops = async () => {
+      setPage(0);
+      setShops([]);
+
       if (!filters.office) {
         setShops([]);
         return;
@@ -35,11 +40,13 @@ function App() {
       try {
         setLoading(true);
 
-        const data = await getShops(filters);
+        const data = await getShops(filters, 0);
 
         setLoading(false);
         setShops(data.businesses);
-      } catch {}
+      } catch {
+        // TODO: handle error
+      }
     };
 
     fetchShops();
@@ -52,6 +59,12 @@ function App() {
           <h1 className="mb-4">Let's find some boba!</h1>
           <Filters filters={filters} setFilters={setFilters} />
           <ShopList loading={loading} shops={shops} />
+          <LoadMore
+            filters={filters}
+            page={page}
+            setPage={setPage}
+            setShops={setShops}
+          />
         </Container>
       </div>
     </div>
