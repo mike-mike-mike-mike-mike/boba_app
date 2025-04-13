@@ -3,14 +3,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SortBy = void 0;
 exports.getBobaShops = getBobaShops;
 const url_1 = __importDefault(require("url"));
-var SortBy;
-(function (SortBy) {
-    SortBy["rating"] = "rating";
-    SortBy["distance"] = "distance";
-})(SortBy || (exports.SortBy = SortBy = {}));
 function getBobaShops(filters) {
     const options = {
         method: "GET",

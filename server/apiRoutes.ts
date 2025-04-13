@@ -1,25 +1,14 @@
 import { Router } from "express";
-import { getBobaShops, SortBy } from "./api/yelp";
+import { getBobaShops } from "./api/yelp";
 import { OFFICE_LOCATION_MAP } from "./constants";
-
-enum Office {
-  los_gatos = "los_gatos",
-  new_york = "new_york",
-  los_angeles = "los_angeles",
-}
-
-type ShopsQueryParams = {
-  office: Office;
-  sortBy: SortBy;
-  page: number;
-};
+import { Office, ShopsQueryParams, SortBy } from "../client/src/shared/types";
 
 const router = Router();
 
 const BATCH_SIZE = 10;
 
 router.get("/shops", (req, res, next) => {
-  const { office, sortBy, page } = req.query;
+  const { office, sortBy, page } = req.query as ShopsQueryParams;
   console.log(req.query);
   if (
     typeof office !== "string" ||

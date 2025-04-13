@@ -1,9 +1,5 @@
 import url from "url";
-
-export enum SortBy {
-  rating = "rating",
-  distance = "distance",
-}
+import { SortBy } from "../../client/src/shared/types";
 
 export type GetBobaFilters = {
   limit: number;
