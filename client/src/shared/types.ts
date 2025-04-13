@@ -14,3 +14,7 @@ export enum SortBy {
   rating = "rating",
   distance = "distance",
 }
+
+export type ShopType = {
+  name: string;
+};
