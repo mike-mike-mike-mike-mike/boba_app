@@ -4,6 +4,7 @@ import { Container, Spinner } from "reactstrap";
 import { Filters, FiltersType } from "./components/filters";
 import { ShopType, SortBy } from "./shared/types";
 import { ShopList } from "./components/ShopList";
+import { getShops } from "./api/shops";
 
 const exampleShop: ShopType = {
   alias: "tasty-boba",
@@ -33,9 +34,8 @@ function App() {
 
       try {
         setLoading(true);
-        const query = new URLSearchParams(filters).toString();
-        const response = await fetch(`/api/shops?${query}`);
-        const data = await response.json();
+
+        const data = await getShops(filters);
 
         setLoading(false);
         setShops(data.businesses);
