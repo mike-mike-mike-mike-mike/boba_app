@@ -4,6 +4,10 @@ import { ShopType } from "../shared/types";
 function formatDistance(distance: number) {
   return (Number(distance) * 0.0006213712).toFixed(1);
 }
+
+// TODO: fix the columns so that rating and distance are aligned
+//  probably need to use the list group or table component instead
+
 export function ShopCard({ shop }: { shop: ShopType }) {
   return (
     <Card className="mt-4 d-flex align-items-start p-3">

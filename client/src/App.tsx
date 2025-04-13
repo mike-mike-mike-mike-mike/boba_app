@@ -42,10 +42,11 @@ function App() {
 
         const data = await getShops(filters, 0);
 
-        setLoading(false);
         setShops(data.businesses);
       } catch {
-        // TODO: handle error
+        // TODO: handle error and show a message to the user
+      } finally {
+        setLoading(false);
       }
     };
 
