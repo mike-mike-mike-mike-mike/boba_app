@@ -9,7 +9,6 @@ const BATCH_SIZE = 5;
 
 router.get("/shops", (req, res, next) => {
   const { office, sortBy, page } = req.query as ShopsQueryParams;
-  console.log(req.query);
   if (
     typeof office !== "string" ||
     !Object.values(Office).includes(office as Office)

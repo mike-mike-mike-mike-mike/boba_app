@@ -8,7 +8,6 @@ const router = (0, express_1.Router)();
 const BATCH_SIZE = 5;
 router.get("/shops", (req, res, next) => {
     const { office, sortBy, page } = req.query;
-    console.log(req.query);
     if (typeof office !== "string" ||
         !Object.values(types_1.Office).includes(office)) {
         return res.status(400).send({
