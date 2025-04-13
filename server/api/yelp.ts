@@ -27,6 +27,7 @@ export function getBobaShops(filters: GetBobaFilters) {
       categories: "bubbletea",
       radius: 10000,
       ...filters,
+      sort_by: filters.sortBy,
     },
   });
 

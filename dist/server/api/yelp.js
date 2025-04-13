@@ -17,10 +17,10 @@ function getBobaShops(filters) {
         protocol: "https",
         hostname: "api.yelp.com",
         pathname: "/v3/businesses/search",
-        query: Object.assign({ 
+        query: Object.assign(Object.assign({ 
             // location: 93401,
             // sort_by: "best_match",
-            categories: "bubbletea", radius: 10000 }, filters),
+            categories: "bubbletea", radius: 10000 }, filters), { sort_by: filters.sortBy }),
     });
     return fetch(req, options);
 }
