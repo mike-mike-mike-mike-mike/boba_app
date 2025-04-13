@@ -5,7 +5,7 @@ import { Office, ShopsQueryParams, SortBy } from "../client/src/shared/types";
 
 const router = Router();
 
-const BATCH_SIZE = 10;
+const BATCH_SIZE = 5;
 
 router.get("/shops", (req, res, next) => {
   const { office, sortBy, page } = req.query as ShopsQueryParams;

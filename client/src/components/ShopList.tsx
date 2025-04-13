@@ -18,7 +18,7 @@ export function ShopList({
 }) {
   const NoShops = () => <div>Select an office location to see shops</div>;
   return (
-    <Container style={{ height: "500px" }}>
+    <Container className="overflow-scroll" style={{ height: "1000px" }}>
       {loading && <Loading />}
       {shops.length > 0 &&
         shops.map((shop) => {

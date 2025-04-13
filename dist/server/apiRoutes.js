@@ -5,7 +5,7 @@ const yelp_1 = require("./api/yelp");
 const constants_1 = require("./constants");
 const types_1 = require("../client/src/shared/types");
 const router = (0, express_1.Router)();
-const BATCH_SIZE = 10;
+const BATCH_SIZE = 5;
 router.get("/shops", (req, res, next) => {
     const { office, sortBy, page } = req.query;
     console.log(req.query);
